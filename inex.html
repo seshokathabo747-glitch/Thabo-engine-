@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thabo Search Engine</title>
+
+<style>
+body {
+    font-family: Arial;
+    background: linear-gradient(135deg, #0f2027, #2c5364);
+    color: white;
+    text-align: center;
+}
+
+h1 {
+    margin-top: 60px;
+    font-size: 3em;
+}
+
+input {
+    width: 60%;
+    padding: 15px;
+    border-radius: 30px;
+    border: none;
+    font-size: 18px;
+}
+
+button {
+    padding: 15px 25px;
+    border-radius: 30px;
+    border: none;
+    background: orange;
+    color: white;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+iframe {
+    margin-top: 30px;
+    width: 90%;
+    height: 500px;
+    border-radius: 15px;
+    border: none;
+    background: white;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🔍 Thabo Search</h1>
+
+<input type="text" id="searchInput" placeholder="Search anything...">
+<button onclick="search()">Search</button>
+
+<br>
+
+<iframe id="resultsFrame"></iframe>
+
+<script>
+function search() {
+    let query = document.getElementById("searchInput").value;
+
+    let url = "https://www.bing.com/search?q=" + encodeURIComponent(query);
+
+    document.getElementById("resultsFrame").src = url;
+}
+</script>
+
+</body>
+</html>
